@@ -116,26 +116,21 @@
 % schools
 \makeatletter
 	\newcommand{\schoolname}[1]{\def \@schoolname {#1}}
-	\newcommand{\degree}[1]{\def \@degree {#1}}
 	\newcommand{\gpa}[1]{\def \@gpa {#1}}
 	\schoolname{}
 	\location{}
-	\degree{}
 	\dates{}
 	\gpa{}
 
 	\newenvironment{school}{
 		\textbf{\@schoolname} \hfill \textit{\@location}\\
-		\textit{\@degree} \hfill \@dates
-		\vspace*{-.8em}
-		%% \begin{list}{}
-		%% 	{\setlength{\leftmargin}{1em}}
-		%% 	\item[]
-		\begin{verse}
-			GPA: \@gpa\\
+                \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lr@{}}
+                  \begin{minipage}[t]{0.8\textwidth}
+		    \begin{list}{$\bullet$}{\topsep \z@ \itemsep -.2em}
 	}{
-		%% \end{list}
-		\end{verse}
+                    \end{list}
+                  \end{minipage} & \@dates
+		\end{tabular*}
 	}
 \makeatother
 
