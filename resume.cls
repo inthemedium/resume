@@ -21,12 +21,14 @@
 	\newcommand{\phone}[1]{\def \@phone {#1}}
 	\newcommand{\email}[1]{\def \@email {#1}}
 	\newcommand{\website}[1]{\def \@website {#1}}
+	\newcommand{\websiteLink}[1]{\def \@websiteLink {#1}}
 	\name{}
 	\addressone{}
 	\addresstwo{}
 	\phone{}
 	\email{}
 	\website{}
+	\websiteLink{}
 \makeatother
 
 % margins
@@ -145,7 +147,7 @@
 		\begin{tabularx}{\textwidth}{l >{\centering}X r}
 			& \vspace*{-2.5em}\LARGE \scshape \@name &\\
 			%% \hline
-			\rule{0em}{1.25em} \href{mailto:\@email}{\@email} \T & \url{\@website} & \@addressone \\ % TODO: adjust?
+			\rule{0em}{1.25em} \href{mailto:\@email}{\@email} \T & \href{\@websiteLink}{\@website} & \@addressone \\ % TODO: adjust?
 			\@phone & & \@addresstwo
 		\end{tabularx}
 	\end{center}
